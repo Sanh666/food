@@ -1,0 +1,71 @@
+.explore-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.explore-menu h1 {
+    color: #333;
+    /* Darker gray for better contrast */
+    font-weight: 500;
+    font-family: 'Open Sans', sans-serif;
+    /* Example font */
+}
+
+.explore-menu-text {
+    max-width: 60%;
+    color: #424242;
+    /* Darker text for better readability */
+}
+
+.explore-menu-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    margin: 20px 0px;
+    overflow-x: scroll;
+}
+
+.explore-menu-list ::-webkit-scrollbar {
+    display: none;
+}
+
+.explore-menu-list-item img {
+    width: 7.5vw;
+    min-width: 80px;
+    cursor: pointer;
+    border-radius: 50%;
+    /* Consider experimenting with shape */
+    transition: 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Optional drop shadow */
+}
+
+.explore-menu-list-item p {
+    margin-top: 10px;
+    color: #424242;
+    font-size: 16px;
+    /* Adjust base font size */
+    cursor: pointer;
+}
+
+.explore-menu hr {
+    margin: 10px 0px;
+    height: 2px;
+    background-color: #e2e2e2;
+    border: none;
+}
+
+.explore-menu-list-item.active {
+    background-color: #f5f5f5;
+    /* Example active state background */
+    /* Consider removing or adjusting border */
+}
+
+/* Add hover effects (optional) */
+.explore-menu-list-item:hover {
+    opacity: 0.8;
+    /* Example hover opacity change */
+}

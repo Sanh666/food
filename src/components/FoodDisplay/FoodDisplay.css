@@ -1,0 +1,30 @@
+/* FoodDisplay.css */
+
+.food-display {
+    /* Overall container styles */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    /* Example background */
+    border-radius: 8px;
+}
+
+#food-display h2 {
+    /* Heading styles */
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.food-display-list {
+    /* List container styles */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    /* Adjust spacing between items */
+}
+
+/* Individual food item styles will be in FoodItem.css */
