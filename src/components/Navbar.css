@@ -1,7 +1,6 @@
-/* Navbar.css */
-
+/* Navbar */
 .navbar {
-    padding: 20px 0px;
+    padding: 20px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,7 +39,7 @@
 /* Hover effect */
 .navbar button:hover {
     background-color: #49557e;
-    color: #ffffff;
+    color: #fff;
     border-color: #49557e;
 }
 
@@ -67,6 +66,7 @@
     right: -8px;
 }
 
+/* Media Queries */
 @media(max-width:1050px) {
     .navbar .logo {
         width: 140px;
