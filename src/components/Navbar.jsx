@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ setShowLogin }) => {
 
     const [menu, setMenu] = useState("home")
     return (
@@ -19,7 +19,7 @@ const Navbar = () => {
                     <img src="/path/to/logo.png" alt="Logo" />
                     <div className="dot"></div>
                 </div>
-                <button>sign in</button>
+                <button onClick={() => setShowLogin(true)}>Sign In</button>
 
             </div>
 

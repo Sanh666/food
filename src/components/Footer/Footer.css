@@ -1,0 +1,78 @@
+/* Footer.css */
+
+/* Căn giữa phần tử Footer */
+.footer {
+    color: #d9d9d9;
+    background-color: #323232;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Căn giữa theo chiều ngang */
+    gap: 20px;
+    padding: 80px 8vw 20px 8vw;
+    margin-top: 100px;
+
+}
+
+
+.footer-coptyright {
+    text-align: center;
+
+}
+
+
+.footer-content {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 80px;
+}
+
+/* Phần tử footer-content-left, footer-content-right, footer-content-center */
+.footer-content-left,
+.footer-content-right,
+.footer-content-center {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+
+
+
+
+.footer-content-center ul,
+.footer-content-left ul {
+    list-style-type: none;
+
+    padding: 0;
+
+    text-align: left;
+
+}
+
+/* Định dạng các mục li trong phần tử footer-content-center và footer-content-left */
+.footer-content-center li,
+
+.footer-content-left li {
+    margin-bottom: 10px;
+    /* Khoảng cách giữa các mục trong danh sách */
+    cursor: pointer;
+}
+
+.footer-content-right h2 .footer-content-center h2 {
+    color: white;
+}
+
+.footer-social-icon img {
+
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.footer hr {
+    width: 100%;
+    height: 2px;
+    margin: 20px 0px;
+}

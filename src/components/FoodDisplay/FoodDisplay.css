@@ -1,30 +1,20 @@
 /* FoodDisplay.css */
 
 .food-display {
-    /* Overall container styles */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    background-color: #fff;
-    /* Example background */
-    border-radius: 8px;
+    margin-top: 30px;
 }
 
 #food-display h2 {
-    /* Heading styles */
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
+    font-size: max(2vw, 24px);
+    font-weight: 600;
 }
 
 .food-display-list {
-    /* List container styles */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 20px;
-    /* Adjust spacing between items */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    margin-top: 30px;
+    gap: 30px;
+    row-gap: 50px;
 }
 
 /* Individual food item styles will be in FoodItem.css */
