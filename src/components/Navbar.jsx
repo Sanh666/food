@@ -7,8 +7,8 @@ import { StoreContext } from "../context/StoreContext";
 const Navbar = ({ setShowLogin }) => {
 
     const [menu, setMenu] = useState("home")
-    const { getTotalCartAmount } = useContext(StoreContext)
-    console.log(getTotalCartAmount)
+    // const { getTotalCartAmount } = useContext(StoreContext)
+
     return (
         <div className="navbar">
             <Link to='/'> <img src={assets.logo} alt="Logo" className="navbar-logo" /></Link>
@@ -22,9 +22,9 @@ const Navbar = ({ setShowLogin }) => {
                 <img src={assets.search_icon} alt="Logo" />
                 <div className="navbar-seacrh-icon">
                     <Link to='/cart'>
-                        <img src={assets.basket_icon} alt="Basket Icon" />
+                        <img src={assets.basket_icon} alt="Incredibles 2 Poster" />
                     </Link>
-                    <div className={getTotalCartAmount() === 0 ? "1" : "dot"}></div>
+                    {/* <div className={getTotalCartAmount() === 0 ? "1" : "dot"}></div> */}
 
                 </div>
                 <button onClick={() => setShowLogin(true)}>Sign In</button>
