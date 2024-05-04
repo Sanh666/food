@@ -7,7 +7,9 @@ import PlaceOder from './pages/PlaceOder/PlaceOder';
 import { Routes, Route } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import LoginPopup from './LoginPopup/LoginPopup';
-
+import axios from 'axios';
+axios.defaults.baseURL = 'http://localhost:8000';
+axios.defaults.withCredentials = true
 function App() {
   const [showLogin, setShowLogin] = useState(false)
   return (
@@ -16,9 +18,11 @@ function App() {
       <div className="App">
         <Navbar setShowLogin={setShowLogin} />
         <Routes>
+
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/order" element={<PlaceOder />} />
+
 
         </Routes>
       </div>
