@@ -43,7 +43,7 @@ import food_29 from './food_29.png'
 import food_30 from './food_30.png'
 import food_31 from './food_31.png'
 import food_32 from './food_32.png'
-
+import upload_area_png from "./upload_area.png"
 import add_icon_white from './add_icon_white.png'
 import add_icon_green from './add_icon_green.png'
 import remove_icon_red from './remove_icon_red.png'
@@ -62,6 +62,7 @@ import parcel_icon from './parcel_icon.png'
 
 export const assets = {
     logo,
+    upload_area_png,
     basket_icon,
     header_img,
     search_icon,

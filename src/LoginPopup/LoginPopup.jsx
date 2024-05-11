@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import "./LoginPopup.css";
 import { assets } from "../assets/assets";
 import axios from "axios";
+import { useContext } from "react";
+import { StoreContext } from "../context/StoreContext";
 
 const LoginPopup = ({ setShowLogin }) => {
+    const { url, setToken } = useContext(StoreContext)
     const [currentState, setCurrentState] = useState("Login");
     const [checked, setChecked] = useState(false); // State variable to track checkbox status
 
@@ -13,15 +16,16 @@ const LoginPopup = ({ setShowLogin }) => {
         password: ''
     });
 
-    const handleToggle = () => {
-        setCurrentState(currentState === "Login" ? "Sign Up" : "Login");
-        setData({
-            name: '',
-            email: '',
-            password: ''
-        });
-        setChecked(false); // Reset the state of the checkbox
-    };
+
+    // const handleToggle = () => {
+    //     setCurrentState(currentState === "Login" ? "Sign Up" : "Login");
+    //     setData({
+    //         name: '',
+    //         email: '',
+    //         password: ''
+    //     });
+    //     setChecked(false); // Reset the state of the checkbox
+    // };
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -34,7 +38,20 @@ const LoginPopup = ({ setShowLogin }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+        let newUrl = url;
+        if (currentState === "Login") {
+            newUrl += "/api/user/login"
+        } else {
+            newUrl += "/api/user/register"
+        }
+        const response = await axios.post(newUrl, data)
+        if (response.data.success) {
+            setToken(response.data.token)
+            localStorage.setItem("token", response.data.token)
+            setShowLogin(false)
+        } else {
+            alert(response.data.message)
+        }
     };
 
     return (
@@ -56,14 +73,12 @@ const LoginPopup = ({ setShowLogin }) => {
                     <input type="checkbox" checked={checked} onChange={handleCheckboxChange} required />
                     <p>By continuing, I agree to the terms of use & privacy policy</p>
                 </div>
-                <p>
-                    {currentState === "Login"
-                        ? "Don't have an account? "
-                        : "Already have an account? "}
-                    <span onClick={handleToggle}>
-                        {currentState === "Login" ? "Sign Up here" : "Login here"}
-                    </span>
-                </p>
+
+                {currentState === "Login"
+                    ? <p>Don't have an account ? <span onClick={() => setCurrentState("Sign Up")}>Click here</span></p>
+                    : <p>Already have a account ? <span onClick={() => setCurrentState("Login")}>Login here</span></p>}
+
+
             </form>
         </div>
     );
